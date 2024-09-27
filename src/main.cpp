@@ -11,6 +11,7 @@ void blink()                                                  //builtin LED blin
 
 void setup() 
 {
+  pinMode(LED_BUILTIN,OUTPUT);
   pinMode(sleepPin, INPUT_PULLDOWN);                         //configure sleepPin to be input and default low    
   blink();                                                   //signaling the ESP32 is on
   esp_sleep_enable_ext0_wakeup((gpio_num_t)sleepPin,1);      //wake up ESP32 when reading on sleepPin is high
